@@ -1,0 +1,26 @@
+0. Kat si pravim formata imeto i e shte bure rout-a v urlto davame i primerno ime default
+1. kato sme na design view clikame 2puti vurhu butona i to avtomatichno ni zakacha eventa
+osven tova ni slaga onClick ="submit_click" v aspx
+----
+rabotene s db modeli 
+1. v papka Models si pravim modela primerno ComputerOrder s id, name etc
+2. dobaviame si web forma za modela i oshte edna web forma za rezultata det shte go displayvame
+
+kato imame radio butoni triabva v propertitata da im setvame group name pr rush(kato im se setne edno i sushto group name, stavat mutuly exclusive);
+ako iskame ednoto da e checknato izbirame checked =true
+id-to im go setna na rushYes i rushNo
+3. doble click vurhu butona kudeto sa eventite triabva da se instanciira modela ni i da se zachisliat stoynostite ot input poletata
+(ako se otide na design viewto i se cukne s mishkata vurhu butona mu se pokazv imeto sled # i realno kum nego se prichisliava)
+ var order = new ComputerOrder();
+            order.OrderId = 101; //zima se ot dbto
+            order.OrderName = OrderNameId.Text; //inputa ot formata go vruzvame za klasa
+            order.Customer = Customer.Text;
+            order.CustomerEmail = CustomerEmail.Text;
+
+//ako iskame da displayvame resultata na druga stranica triabva gornoto da go zapazim v sesia
+//davame identifikator na sesiata, moje da si go narechem kakto si iskame  Session["currOrd"]
+Session["CurrentOrder"] = order; //taka zapazvame obekta v sesion state
+//ako si slojim breakpoint na session-a gore shte vidim obekta
+
+
+
