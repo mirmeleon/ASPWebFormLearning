@@ -63,6 +63,28 @@ namespace passingValues
             return books;
         }
 
+        public static List<Department> GetAllDepartments()
+        {
+            List<Department> listDepartments = new List<Department>();
+            string cs = ConfigurationManager.ConnectionStrings["BookShopSystemConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                //okazvame mu da si vzeme stornatata procedura
+                SqlCommand cmd = new SqlCommand("spGetDepartments", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Department department = new Department();
+                    department.DepartmentId = Convert.ToInt32(rdr["DepartmentId"]);
+                    department.DepartmentName = rdr["Name"].ToString();
+                    listDepartments.Add(department);
+                }
+            }
+            return listDepartments;
+        }
 
     }
 
@@ -84,4 +106,12 @@ namespace passingValues
         public DateTime ReleaseDate { get; set; }
         public int AuthorId { get; set; }
     }
+
+    public class Department
+    {
+        public int DepartmentId { get; set; }
+        public string DepartmentName { get; set; }
+    }
+
+   
 }

@@ -72,6 +72,7 @@
     </None>
     <None Include="packages.config" />
     <Content Include="DropDownWithStoredProcedure.aspx" />
+    <Content Include="StoredPrFromDSourceObject.aspx" />
     <Content Include="Styles\SiteStyle.css">
       <DependentUpon>SiteStyle.scss</DependentUpon>
     </Content>
@@ -111,6 +112,7 @@
     <Compile Include="DropDownWithStoredProcedure.aspx.designer.cs">
       <DependentUpon>DropDownWithStoredProcedure.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeDataAcessLayer.cs" />
     <Compile Include="EmployeesFiltering.aspx.cs">
       <DependentUpon>EmployeesFiltering.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,6 +145,13 @@
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoredPrFromDSourceObject.aspx.cs">
+      <DependentUpon>StoredPrFromDSourceObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoredPrFromDSourceObject.aspx.designer.cs">
+      <DependentUpon>StoredPrFromDSourceObject.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

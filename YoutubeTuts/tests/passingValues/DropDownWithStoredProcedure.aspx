@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+         <%--   tuk se vijda na selectComandType che e stored procedure--%>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BookShopSystemConnectionString %>" SelectCommand="spGetDepartments" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="DepartmentId" AutoPostBack="True"></asp:DropDownList>
         </div>
